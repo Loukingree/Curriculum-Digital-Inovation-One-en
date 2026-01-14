@@ -1,0 +1,316 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+/* --- SIDEBAR (COLUNA ESQUERDA) --- */
+.left-sidebar {
+  /* Gradiente sutil e moderno (Preto -> Azul Profundo -> Roxo Escuro) */
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #2b2b53, #100e17);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite; /* Animação lenta e elegante */
+
+  color: #e0e0e0 !important; /* Texto off-white (menos agressivo que branco puro) */
+  padding-bottom: 30px;
+  border-radius: 8px; /* Cantos levemente arredondados */
+}
+
+/* Títulos e Ícones da Sidebar */
+.left-sidebar h2,
+.left-sidebar a,
+.left-sidebar p i {
+  color: #ffffff !important; /* Títulos mantêm destaque */
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.3); /* Leve brilho neon no texto */
+}
+
+.left-sidebar p,
+.left-sidebar span,
+.skill-description {
+  color: #d1d5db !important; /* Cinza suave para leitura */
+}
+
+.left-sidebar hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover nos Links da Sidebar */
+.left-sidebar a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+.left-sidebar a:hover {
+  color: #a855f7 !important;
+  transform: translateX(5px);
+  display: inline-block;
+}
+
+/* Ajuste nos ícones de contato */
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.contact-item i {
+  margin-right: 10px;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+  color: #ff2c8b !important; /* Rosa Neon nos icones de contato */
+}
+
+/* --- SKILLS --- */
+.skill-item {
+  margin-bottom: 22px;
+}
+
+/* --- AJUSTE FINO DE POSIÇÃO (SKILLS) --- */
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 6px !important;
+}
+
+.skill-title {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 15px !important;
+  /* IMPORTANTE: Isso impede que a fonte crie espaço extra em cima/embaixo */
+  line-height: 1.1 !important;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  /* Gradiente com "luz" branca no meio */
+  background: linear-gradient(
+    90deg,
+    #0083cb 20%,
+    #00c3da 45%,
+    #2bfdbe 50%,
+    #00c3da 55%,
+    #0083cb 80%
+  );
+  background-size: 300% 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(43, 253, 190, 0.6);
+
+  /* Começa invisível */
+  width: 0;
+
+  /* O segredo da animação: As duas animações juntas na mesma linha */
+  /* 1. loadBar: Faz a barra crescer (acontece 1 vez) */
+  /* 2. energyFlow: Faz a cor se mover (acontece para sempre) */
+  animation: loadBar 3s ease-out forwards, energyFlow 20s linear infinite;
+}
+
+@keyframes loadBar {
+  to {
+    width: var(--w);
+  }
+}
+
+/* Animação de Energia (Movimento do Gradiente) */
+@keyframes energyFlow {
+  0% {
+    background-position: 100% 50%;
+  }
+  40% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.skill-value {
+  font-size: 12px;
+  font-weight: bold;
+  color: #2bfdbe;
+} /* Cor ajustada para Turquesa */
+.skill-description {
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  color: #b8b8b8 !important;
+  line-height: 1.4;
+}
+
+/* --- COLUNA DIREITA (CONTEÚDO PRINCIPAL) --- */
+
+/* Aumentar o respiro (Whitespace) */
+.card-padding {
+  padding: 32px 24px !important; /* Muito mais espaço interno nos cards */
+}
+
+.w3-twothird h2 {
+  color: #2C2B57; /* <--- MUDE AQUI A COR DE "EXPERIÊNCIAS" */
+  letter-spacing: -0.5px;
+  border-bottom: none !important; /* Linha de destaque abaixo do título */
+  display: inline-block;
+  padding-bottom: 8px;
+  margin-bottom: 25px; /* Espaço após o título */
+}
+
+.w3-twothird h2 i {
+  color: #2C2B57 !important;
+} /* Ícone do título com cor contrastante, use !important após a cor para aplicar */
+
+.w3-twothird h5 {
+  font-weight: 600;
+  margin-top: 25px; /* Espaço antes de cada cargo/projeto */
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #656565;
+}
+
+.w3-twothird p {
+  line-height: 1.8; /* Aumenta o espaçamento entre linhas (leitura fácil) */
+  color: #494949;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+/* Tags e Datas */
+.w3-text-teal {
+  color: #000050 !important;
+  font-weight: 500;
+  font-size: 14px;
+}
+.w3-tag.w3-teal {
+  background-color: #0083cb !important ;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Define o TAMANHO da data (Para ficar igual ao antigo) */
+.w3-twothird h6 {
+  font-size: 16px !important; /* <--- AUMENTEI PARA 16px (O padrão era menor) */
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Sombras Modernas nos Cards Brancos */
+.w3-card,
+.w3-card-4 {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.025) !important;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+}
+
+/* --- FOOTER (RODAPÉ) CONSISTENTE --- */
+.footer-dark {
+  background-color: #1a1a2e !important; /* Cor escura próxima do sidebar */
+  color: #e0e0e0 !important;
+  padding: 20px 0;
+  border-radius: 0 0 12px 12px;
+}
+.footer-dark a {
+  color: #ff2c8b !important;
+  text-decoration: none;
+}
+.footer-dark i {
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+.footer-dark i:hover {
+  color: #a855f7 !important;
+}
+
+/* --- BOTÃO DE MÚSICA (Canto Inferior Direito) --- */
+.music-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000050; /* Azul Marinho */
+  color: #2bfdbe; /* Neon Mint */
+  border: 2px solid #2bfdbe;
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  font-weight: bold;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  opacity: 0.7; /* Meio transparente quando parado */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre icone e texto */
+}
+
+.music-float:hover {
+  background-color: #2bfdbe;
+  color: #000050;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* --- NOVO CTA FIXO (COM POSICIONAMENTO CORRIGIDO) --- */
+.cta-live {
+  position: fixed;
+  top: 15px;
+  right: 20px; /* Posição padrão para telas menores que 1440px */
+  padding: 8px 15px;
+  background-color: #ff2c8b;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  display: none;
+}
+
+/* * CORREÇÃO PARA TELAS GRANDES (CONTENT = 1400px)
+      * A partir de 1440px de largura, o botão será fixado na borda direita do currículo.
+      */
+@media (min-width: 1440px) {
+  .cta-live {
+    /* 50vw (centro da tela) - 700px (metade do container de 1400px) + 20px (respiro) */
+    right: calc(50vw - 700px + 20px);
+  }
+}
+
+/* Mantém o botão visível em telas >= 1000px */
+@media (min-width: 1000px) {
+  .cta-live {
+    display: block;
+  }
+}
+
+.cta-live:hover {
+  background-color: #a855f7;
+  color: white;
+}
+
+/* Animação do Fundo da Sidebar */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
